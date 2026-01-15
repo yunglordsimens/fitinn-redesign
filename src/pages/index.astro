@@ -1,11 +1,67 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BenefitsList from '../components/BenefitsList.jsx';
+import StudiosMap from '../components/StudiosMap.jsx';
+import Footer from '../components/Footer.astro';
+import Navigation from '../components/Navigation.jsx';
+import VideoModal from '../components/VideoModal.jsx';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="FITINN | Editorial">
+	
+<Navigation client:load />
+
+	<main class="relative w-full min-h-screen flex flex-col md:flex-row pt-20 md:pt-0">
+		
+		<div class="w-full md:w-1/2 flex flex-col justify-center px-8 md:px-16 lg:px-24 pt-20 md:pt-0 z-10">
+            
+            <div class="flex items-center gap-3 mb-8">
+                <span class="w-10 h-[1px] bg-brand-yellow"></span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-400">Since 2004</span>
+            </div>
+
+			<h1 class="font-heading text-7xl md:text-8xl lg:text-[7rem] font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-white">
+				Pure<br/>
+                <span class="text-gray-700">Power.</span><br/>
+                No <span class="text-brand-yellow">Bull*</span>
+			</h1>
+
+			<p class="text-sm md:text-base text-gray-400 font-sans max-w-sm leading-relaxed mb-12 border-l border-gray-800 pl-6">
+				FitInn redefine fitness v České republice. 
+                Prémiové vybavení, absolutní fokus, žádné zbytečnosti.
+                Začni svou transformaci dnes.
+			</p>
+
+            <div>
+                <a href="/cenik" class="group inline-flex items-center gap-4 text-sm font-bold uppercase tracking-widest hover:text-brand-yellow transition-colors">
+                    <span class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center group-hover:border-brand-yellow group-hover:bg-brand-yellow group-hover:text-black transition-all">
+                        ↘
+                    </span>
+                    Join The Club
+                </a>
+            </div>
+		</div>
+
+        <div class="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden">
+            <img 
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470" 
+                class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-1000 ease-out scale-105"
+            />
+            <div class="absolute bottom-8 right-8 text-right">
+                <div class="text-4xl font-heading font-bold text-white">499,-</div>
+                <div class="text-[10px] uppercase tracking-widest text-brand-yellow">Monthly Pass</div>
+            </div>
+        </div>
+	</main>
+
+    <div id="benefits" class="bg-brand-black text-white py-20">
+        <BenefitsList client:visible />
+    </div>
+
+	<div id="studios" class="relative z-20 bg-brand-gray">
+		<StudiosMap client:only="react" />
+	</div>
+
+	<Footer />
+	<VideoModal client:load />
 </Layout>

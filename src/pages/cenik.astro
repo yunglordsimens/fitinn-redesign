@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.jsx';
+import Footer from '../components/Footer.astro';
+import FreePassModal from '../components/FreePassModal.jsx';
+
+const prices = [
+  {
+    category: "BASIC",
+    items: [
+      { name: "Roční členství", desc: "Vázanost 12 měsíců", price: "499", currency: "CZK/měs" },
+      { name: "Studentské členství", desc: "Do 26 let, vázanost 12 měsíců", price: "399", currency: "CZK/měs" },
+      { name: "Flexi členství", desc: "Bez závazků, měsíční výpověď", price: "699", currency: "CZK/měs" },
+    ]
+  },
+  {
+    category: "ADD-ONS",
+    items: [
+      { name: "Nápojový bar", desc: "Neomezená konzumace (Gatorade/Voda)", price: "99", currency: "CZK/měs" },
+      { name: "Solárium", desc: "Flatrate (max 15 min/den)", price: "199", currency: "CZK/měs" },
+      { name: "Trenér", desc: "Úvodní lekce (60 min)", price: "500", currency: "CZK" },
+    ]
+  }
+];
+---
+
+<Layout title="Ceník | FitInn">
+  <Navigation client:load />
+
+  <main class="bg-brand-black min-h-screen pt-32 pb-20 px-6 md:px-12 lg:px-24">
+    
+    <div class="border-b border-brand-yellow/50 pb-12 mb-20">
+      <h1 class="font-heading font-bold text-6xl md:text-8xl uppercase text-white tracking-tighter mb-4">
+        Ceník <span class="text-brand-yellow">2026</span>
+      </h1>
+      <p class="font-mono text-gray-500 uppercase tracking-widest text-sm">
+        /// Investice do tvého těla
+      </p>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+      {prices.map((section) => (
+        <div class="mb-20">
+          <h2 class="font-mono text-brand-yellow text-xs uppercase tracking-[0.3em] mb-8 border-l border-brand-yellow pl-4">
+            {section.category}
+          </h2>
+
+          <div class="flex flex-col">
+            {section.items.map((item) => (
+              <div class="group flex flex-col md:flex-row justify-between items-baseline py-8 border-b border-gray-800 hover:border-white transition-colors cursor-default">
+                
+                <div class="w-full md:w-1/2 mb-2 md:mb-0">
+                  <h3 class="font-heading text-3xl uppercase font-bold text-white group-hover:text-brand-yellow transition-colors">
+                    {item.name}
+                  </h3>
+                  <p class="font-sans text-gray-500 text-sm mt-1">{item.desc}</p>
+                </div>
+
+                <div class="hidden md:block flex-1 border-b border-dotted border-gray-800 mx-8 relative -top-2"></div>
+
+                <div class="text-right">
+                  <span class="font-heading text-4xl md:text-5xl font-bold text-white block leading-none">
+                    {item.price}
+                  </span>
+                  <span class="font-mono text-[10px] text-gray-500 uppercase tracking-wider">
+                    {item.currency}
+                  </span>
+                </div>
+
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 p-12 bg-gray-900 border border-gray-800 text-center">
+      <h3 class="font-heading text-3xl text-white uppercase mb-4">Připraven začít?</h3>
+      <p class="text-gray-400 mb-8 max-w-md mx-auto">První trénink je na nás. Přijď si vyzkoušet atmosféru FitInn ještě dnes.</p>
+      <FreePassModal client:load />
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout> і

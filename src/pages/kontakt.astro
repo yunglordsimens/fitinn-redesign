@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.jsx';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Kontakt | FitInn">
+  <Navigation client:load />
+
+  <main class="bg-brand-black min-h-screen pt-32 pb-20 px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row gap-20">
+    
+    <div class="lg:w-1/2">
+      <h1 class="font-heading font-bold text-6xl md:text-8xl uppercase text-white tracking-tighter mb-12">
+        Get in <span class="text-gray-700">Touch</span>
+      </h1>
+
+      <div class="space-y-12">
+        <div>
+          <h3 class="font-mono text-xs text-brand-yellow uppercase tracking-widest mb-4">Headquarters</h3>
+          <p class="text-xl text-white font-heading uppercase leading-relaxed">
+            FitInn International<br/>
+            Veletržní 24<br/>
+            170 00 Praha 7
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-mono text-xs text-brand-yellow uppercase tracking-widest mb-4">Support</h3>
+          <p class="text-xl text-white font-heading uppercase">
+            <a href="mailto:info@fitinn.cz" class="hover:text-gray-400 transition">info@fitinn.cz</a><br/>
+            <span class="text-gray-500">+420 800 123 456</span>
+          </p>
+        </div>
+
+        <div class="flex gap-4 pt-8">
+            <div class="w-12 h-12 border border-white/20 flex items-center justify-center text-white font-bold hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-all cursor-pointer">IG</div>
+            <div class="w-12 h-12 border border-white/20 flex items-center justify-center text-white font-bold hover:bg-brand-yellow hover:text-black hover:border-brand-yellow transition-all cursor-pointer">FB</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:w-1/2 bg-gray-900/30 p-8 md:p-12 border border-white/5 backdrop-blur-sm">
+      <h3 class="font-heading text-3xl uppercase text-white mb-8">Napiš nám</h3>
+      
+      <form class="space-y-8">
+        <div class="group relative">
+          <input type="text" placeholder="Jméno" class="w-full bg-transparent border-b border-gray-700 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-brand-yellow transition-colors font-mono uppercase text-sm" />
+        </div>
+        
+        <div class="group relative">
+          <input type="email" placeholder="Email" class="w-full bg-transparent border-b border-gray-700 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-brand-yellow transition-colors font-mono uppercase text-sm" />
+        </div>
+
+        <div class="group relative">
+            <select class="w-full bg-transparent border-b border-gray-700 py-4 text-gray-400 focus:outline-none focus:border-brand-yellow transition-colors font-mono uppercase text-sm appearance-none rounded-none">
+                <option>Mám zájem o členství</option>
+                <option>Problém s platbou</option>
+                <option>Spolupráce / Kariéra</option>
+                <option>Jiné</option>
+            </select>
+        </div>
+        
+        <div class="group relative">
+          <textarea rows="4" placeholder="Zpráva" class="w-full bg-transparent border-b border-gray-700 py-4 text-white placeholder-gray-600 focus:outline-none focus:border-brand-yellow transition-colors font-mono uppercase text-sm resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-white text-black font-bold uppercase py-5 hover:bg-brand-yellow transition-colors tracking-widest mt-4">
+          Odeslat
+        </button>
+      </form>
+    </div>
+
+  </main>
+  <Footer />
+</Layout>

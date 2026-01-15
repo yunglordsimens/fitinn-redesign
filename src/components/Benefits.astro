@@ -1,0 +1,58 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const items = [
+  { 
+    id: "01", 
+    title: "Equipment", 
+    subtitle: "Gym80 & Precor Series", 
+    image: "https://images.unsplash.com/photo-1540497077202-7c8a33801524?q=80&w=1470" 
+  },
+  { 
+    id: "02", 
+    title: "Ladies Zone", 
+    subtitle: "Private Area Access", 
+    image: "https://images.unsplash.com/photo-1521804906057-1df8fdb718b7?q=80&w=1470" 
+  },
+  { 
+    id: "03", 
+    title: "Functional", 
+    subtitle: "Crossfit & Mobility", 
+    image: "https://images.unsplash.com/photo-1517963879466-e925ac69a2d6?q=80&w=1470" 
+  },
+  { 
+    id: "04", 
+    title: "Coaching", 
+    subtitle: "Professional Support", 
+    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470" 
+  }
+];
+
+export default function BenefitsList() {
+  const [hoveredIndex, setHoveredIndex] = useState(0); // По умолчанию показываем первый
+
+  return (
+    <div className="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row gap-12 items-center">
+      
+      {/* ЛЕВАЯ ЧАСТЬ: СПИСОК */}
+      <div className="w-full md:w-1/2 flex flex-col">
+        <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-8 ml-1">
+          /// What We Offer
+        </h2>
+        
+        {items.map((item, index) => (
+          <div 
+            key={item.id}
+            onMouseEnter={() => setHoveredIndex(index)}
+            className="group py-8 border-b border-gray-800 cursor-pointer flex items-baseline justify-between transition-colors hover:border-brand-yellow"
+          >
+            <div className="flex items-baseline gap-6">
+              <span className="text-xs font-mono text-gray-600 group-hover:text-brand-yellow transition-colors">
+                /{item.id}
+              </span>
+              <h3 className="text-3xl md:text-5xl font-heading font-bold uppercase text-gray-400 group-hover:text-white transition-colors">
+                {item.title}
+              </h3>
+            </div>
+            {/* Стрелочка появляется при ховере */}
+            <span className="opacity-0 group-hover:opacity-100 text-brand-yellow transition-opacity text-xl

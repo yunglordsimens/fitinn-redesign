@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+
+  --color-brand-yellow: #FFD500;
+  --color-brand-black: #050505; /* Почти черный, но мягче */
+  --color-brand-gray: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-white antialiased overflow-x-hidden;
+  }
+  
+  /* Делаем выделение текста желтым - это стильно */
+  ::selection {
+    @apply bg-brand-yellow text-black;
+  }
+}
