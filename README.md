@@ -38,11 +38,11 @@ A high-performance UI/UX redesign concept for the FitInn fitness chain. The proj
   <tr>
     <td width="50%" valign="top">
       <h4 align="center">PRICING (CENÍK)</h4>
-      <img src="./preview_Ceník_FitInn.png" width="100%" style="border-radius: 5px;">
+      <img src="./preview_Cenik_FitInn.png" width="100%" style="border-radius: 5px;">
     </td>
     <td width="50%" valign="top">
       <h4 align="center">INTERACTIVE MODALS</h4>
-      <img src="./preview_Ceník_FitInn_2.png" width="100%" style="border-radius: 5px;">
+      <img src="./preview_Cenik_FitInn_2.png" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
   <tr>
