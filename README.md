@@ -47,8 +47,14 @@ A high-performance UI/UX redesign concept for the FitInn fitness chain. The proj
   </tr>
   <tr>
     <td colspan="2" align="center">
-      <h4 align="center">CONTACT & STUDIOS MAP</h4>
+      <h4 align="center">CONTACT</h4>
       <img src="./preview_Kontakt_FitInn.png" width="100%" style="border-radius: 5px;">
+    </td>
+  </tr>
+    <tr>
+    <td colspan="2" align="center">
+      <h4 align="center">STUDIOS MAP</h4>
+      <img src="./preview_FITINN_Editorial_map.png" width="100%" style="border-radius: 5px;">
     </td>
   </tr>
 </table>
