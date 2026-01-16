@@ -8,9 +8,50 @@ A high-performance UI/UX redesign concept for the FitInn fitness chain. The proj
 
 ---
 
-### PREVIEW
+### / PREVIEW & DEMO
 
-![Website Preview](./preview.png)
+<img src="./preview_FITINN_Editorial.gif" width="100%" alt="Desktop Interaction" style="border-radius: 8px; margin-bottom: 20px;">
+
+---
+
+### / HIGH FIDELITY DESIGN
+
+> **Homepage Concept.** Focus on typographic hierarchy and "Dark Industrial" aesthetic.
+<br>
+<img src="./preview_FITINN_Editorial.png" width="100%" alt="Homepage Full Design" style="border-radius: 8px;">
+
+---
+
+### / MOBILE FIRST EXPERIENCE
+
+> **Responsive Adaptation.** Fully optimized navigation and touch interactions using Tailwind CSS grid.
+<br>
+<p align="center">
+  <img src="./preview_FITINN_Editorial_mobile.gif" width="350" alt="Mobile Interaction" style="border-radius: 12px; border: 2px solid #333;">
+</p>
+
+---
+
+### / PAGE DETAILS & MODALS
+
+<table style="border: none; width: 100%;">
+  <tr>
+    <td width="50%" valign="top">
+      <h4 align="center">PRICING (CENÍK)</h4>
+      <img src="./preview_Ceník_FitInn.png" width="100%" style="border-radius: 5px;">
+    </td>
+    <td width="50%" valign="top">
+      <h4 align="center">INTERACTIVE MODALS</h4>
+      <img src="./preview_Ceník_FitInn_2.png" width="100%" style="border-radius: 5px;">
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <h4 align="center">CONTACT & STUDIOS MAP</h4>
+      <img src="./preview_Kontakt_FitInn.png" width="100%" style="border-radius: 5px;">
+    </td>
+  </tr>
+</table>
 
 ---
 
