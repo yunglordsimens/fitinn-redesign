@@ -1,14 +1,28 @@
 ---
 import '../styles/global.css';
-import '@fontsource/oswald/700.css'; // Жирный для заголовков
-import '@fontsource/inter/400.css';  // Обычный текст
-import '@fontsource/inter/600.css';  // Полужирный
+import '@fontsource/oswald/700.css'; // Bold for headings
+import '@fontsource/inter/400.css';  // Regular text
+import '@fontsource/inter/600.css';  // Semi-bold
 
 interface Props {
 	title: string;
+	description?: string;        // SEO description
+	ogImage?: string;           // Open Graph image URL
+	robots?: string;            // Robots meta content (default: "index, follow")
+	canonical?: string;         // Canonical URL
 }
 
-const { title } = Astro.props;
+const { 
+	title, 
+	description = "Default site description", 
+	ogImage = "/default-og-image.jpg", 
+	robots = "index, follow",
+	canonical 
+} = Astro.props;
+
+// Get current URL for og:url
+const url = Astro.url;
+const canonicalUrl = canonical || url.href;
 ---
 
 <!doctype html>
@@ -18,7 +32,27 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		
+		{/* Standard meta tags */}
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content={robots} />
+		
+		{/* Canonical URL */}
+		{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+		
+		{/* Open Graph meta tags (Facebook, LinkedIn, etc.) */}
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:type" content="website" />
+		
+		{/* Twitter Card meta tags */}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
 	</head>
 	<body>
 		<slot />
@@ -26,8 +60,8 @@ const { title } = Astro.props;
   import Lenis from 'lenis'
 
   const lenis = new Lenis({
-    duration: 1.2, // Длительность инерции
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Плавность
+	duration: 1.2, // Inertia duration
+	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smoothness
     smoothWheel: true,
   })
 

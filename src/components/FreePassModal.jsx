@@ -7,17 +7,17 @@ export default function FreePassModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Имитация отправки
+    // Simulate sending
     setIsSent(true);
     setTimeout(() => {
       setIsOpen(false);
-      setIsSent(false); // Сброс для следующего раза
+      setIsSent(false); // Reset for next time
     }, 2000);
   };
 
   return (
     <>
-      {/* КНОПКА-ТРИГГЕР */}
+      {/* TRIGGER BUTTON */}
       <button 
         onClick={() => setIsOpen(true)}
         className="bg-brand-yellow text-black font-bold uppercase px-8 py-4 hover:bg-white transition-colors tracking-widest"
@@ -25,7 +25,7 @@ export default function FreePassModal() {
         Získat Free Pass
       </button>
 
-      {/* МОДАЛКА */}
+      {/* MODAL */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -42,7 +42,7 @@ export default function FreePassModal() {
               className="bg-[#111] border border-gray-800 p-8 md:p-12 max-w-lg w-full relative"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Крестик */}
+              {/* Close button (X) */}
               <button 
                 onClick={() => setIsOpen(false)}
                 className="absolute top-4 right-4 text-gray-500 hover:text-brand-yellow text-xl"

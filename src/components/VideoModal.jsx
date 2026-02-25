@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function VideoModal() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // ID видео с YouTube (замени на реальный ID от FitInn, если есть)
-  const videoId = "M7lc1UVf-VE"; 
+  // YouTube video ID
+  const videoId = "VVi46rx5YUg"; 
 
   return (
     <>
-      {/* КНОПКА PLAY (Фиксированная внизу справа) */}
+      {/* PLAY BUTTON*/}
       <button 
         onClick={() => setIsOpen(true)}
         className="fixed bottom-8 right-8 z-[60] group flex items-center gap-3 bg-white text-black px-6 py-3 rounded-full hover:bg-brand-yellow transition-colors shadow-2xl border border-gray-200"
@@ -18,7 +18,7 @@ export default function VideoModal() {
         <span className="text-xs font-bold uppercase tracking-widest">Play Showreel</span>
       </button>
 
-      {/* МОДАЛЬНОЕ ОКНО */}
+      {/* MODAL WINDOW */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -29,12 +29,12 @@ export default function VideoModal() {
             onClick={() => setIsOpen(false)}
           >
             
-            {/* Кнопка Закрыть */}
+            {/* Close button */}
             <button className="absolute top-8 right-8 text-white text-xl font-mono uppercase hover:text-brand-yellow">
               [Close X]
             </button>
 
-            {/* Контейнер видео */}
+            {/* Video container */}
             <motion.div 
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

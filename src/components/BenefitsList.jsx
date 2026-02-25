@@ -53,7 +53,7 @@ export default function BenefitsList() {
                   {item.title}
                 </h3>
               </div>
-              {/* Стрелка (только на ПК) */}
+              {/* Arrow (desktop only) */}
               <span className="hidden md:block opacity-0 group-hover:opacity-100 text-brand-yellow transition-opacity text-xl">
                 →
               </span>

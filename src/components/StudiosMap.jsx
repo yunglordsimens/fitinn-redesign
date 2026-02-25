@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { studios } from '../data/studios';
 
-// --- НАСТРОЙКА ИКОНОК ---
+// --- ICON SETUP ---
 const createCustomIcon = () => {
   return L.divIcon({
     className: "custom-marker",
@@ -13,7 +13,7 @@ const createCustomIcon = () => {
       width: 12px;
       height: 12px;
       border: 1px solid #000; 
-      /* Сделали точку квадратной для строгости, или можно оставить круг */
+      /* Made the point square for strictness, or you can leave it round */
       border-radius: 0%; 
     "></div>`,
     iconSize: [12, 12],
@@ -24,7 +24,7 @@ const createCustomIcon = () => {
 
 const customIcon = createCustomIcon();
 
-// --- КОМПОНЕНТ ОБНОВЛЕНИЯ КАРТЫ ---
+// --- MAP UPDATER COMPONENT ---
 function MapUpdater({ center }) {
   const map = useMap();
   useEffect(() => {
@@ -33,7 +33,7 @@ function MapUpdater({ center }) {
   return null;
 }
 
-// --- ОСНОВНОЙ КОМПОНЕНТ ---
+// --- MAIN COMPONENT ---
 export default function StudiosMap() {
   const [activeCountry, setActiveCountry] = useState('cz');
   const [activeStudio, setActiveStudio] = useState(null);
@@ -56,10 +56,9 @@ export default function StudiosMap() {
 
   return (
     <section className="py-0 border-t border-brand-gray">
-      {/* Убрали max-w-7xl, чтобы карта была на всю ширину (или оставь контейнер, но убери rounded) */}
       <div className="w-full"> 
         
-        {/* ЗАГОЛОВОК СЕКЦИИ (В стиле списка выше) */}
+        {/* SECTION TITLE*/}
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-12">
             <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500 mb-2 ml-1">
             /// Locations
@@ -69,13 +68,13 @@ export default function StudiosMap() {
             </h2>
         </div>
         
-        {/* КОНТЕЙНЕР КАРТЫ: ТЕПЕРЬ СТРОГИЙ ПРЯМОУГОЛЬНИК */}
+        {/* MAP CONTAINER */}
         <div className="flex flex-col lg:flex-row h-[600px] w-full border-t border-brand-gray bg-brand-black">
           
-          {/* ЛЕВАЯ ПАНЕЛЬ: СПИСОК */}
+          {/* LEFT PANEL: LIST */}
           <div className="w-full lg:w-1/3 bg-brand-black flex flex-col z-10 border-r border-brand-gray">
             
-            {/* Селект страны */}
+            {/* Country select */}
             <div className="p-6 border-b border-brand-gray">
               <label className="text-xs font-mono uppercase text-gray-500 mb-2 block tracking-widest">
                 Select Region:
@@ -94,7 +93,7 @@ export default function StudiosMap() {
               </div>
             </div>
 
-            {/* Список студий */}
+            {/* Studios list */}
             <div className="overflow-y-auto flex-1 scrollbar-hide">
               {filteredStudios.map((studio) => (
                 <div 
@@ -113,7 +112,7 @@ export default function StudiosMap() {
             </div>
           </div>
 
-          {/* ПРАВАЯ ЧАСТЬ: КАРТА */}
+          {/* RIGHT SIDE: MAP */}
           <div className="w-full lg:w-2/3 h-full relative bg-[#0a0a0a]">
             <MapContainer center={mapCenter} zoom={13} scrollWheelZoom={false} className="h-full w-full outline-none" style={{ background: '#050505' }}>
                 <TileLayer
@@ -135,7 +134,7 @@ export default function StudiosMap() {
                 ))}
             </MapContainer>
             
-            {/* Сетка поверх карты для стиля */}
+            {/* Grid overlay for map style */}
             <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
           </div>
 

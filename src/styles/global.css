@@ -5,7 +5,7 @@
   --font-heading: "Oswald", sans-serif;
 
   --color-brand-yellow: #FFD500;
-  --color-brand-black: #050505; /* Почти черный, но мягче */
+  --color-brand-black: #050505;
   --color-brand-gray: #1A1A1A;
 }
 
@@ -13,8 +13,7 @@
   body {
     @apply bg-brand-black text-white antialiased overflow-x-hidden;
   }
-  
-  /* Делаем выделение текста желтым - это стильно */
+
   ::selection {
     @apply bg-brand-yellow text-black;
   }
